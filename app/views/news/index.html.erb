@@ -1,0 +1,20 @@
+    <%= link_to 'New News', new_news_path, class: "btn btn-primary" %>
+     <div class="card-header">
+    <h1>News</h1>
+  </div>
+  <div class="card-header">
+<div class="card-group">
+    <% @news.each do |news| %>
+
+  <div class="card">
+    <img <%= image_tag news.image.url(:large), class: 'img-show' if news.image? %>>
+    <div class="card-body">
+      <h5 class="card-title"><h1 class="card-title"><%= link_to news.name, news_path(news)%></h1></h5>
+      <p class="card-text"><%= news.description %></p>
+    </div>
+  </div>
+      <% end %>
+</div>
+</div>
+
+
