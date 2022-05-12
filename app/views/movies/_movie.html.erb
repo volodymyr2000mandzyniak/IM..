@@ -1,11 +1,14 @@
-
 <article class="post">
   <section class='post-head'>
     <h2><%= link_to movie.name, movie_path(movie) %> </h2>
     <small>
 		<time><%= movie.created_at.to_date.strftime("%d %B, %Y") %></time>
+		<% if movie.category.present? %>
 		|
-		<%= link_to 'Змінити', edit_movie_path(movie)%>
+		  <%= link_to @movie.category.name, movie.category %>
+		<% end %>
+		|
+		<%= link_to 'Змінити', edit_movie_path(movie) %>
 		|
 		<%= link_to 'Видалити', movie, method: :delete, data: { confirm: 'Are you sure?' } %>   
 	 </small>
@@ -18,32 +21,5 @@
 </article> 
 
 
-<%# 
-<section id='categories'>
-	<table class="table">
-		<thead >
-				<tr>
-					<th>#</th>
-					<th>date</th>
-					<th>фільм</th>
-					<th>опис</th>
-				</tr>
-		</thead>
-		<tbody>
-				<tr>
-					<td><%= image_tag movie.image.url(:thumb), class: 'img-thumbnail thumb' if movie.image? %></td>
-				  <%# <td><time><%= movie.created_at.to_date.strftime("%d %B, %Y") %></time> 
-					<%# |
-					 <%= link_to 'Видалити', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-					<%# |
-					<%= link_to 'Видалити', movie, method: :delete, data: { confirm: 'Are you sure?' } %>   
-					<%# </td>
-					<td><%= link_to movie.name, movie_path(movie) %> </td>
-					<%# <td><%= movie.description %></td>
-				</tr>
-<%# 				
-		</tbody>
-	</table>	
-</section>  %>
 
 

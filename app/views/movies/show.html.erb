@@ -1,33 +1,38 @@
-<%# <div class="row">
+
+  <div class="row">
   <div class="col-md-4">
     <%= image_tag @movie.image.url(:large), class: 'img-show' if @movie.image? %>
-  <%# </div>
+   </div>
   <div class="col-md-8">
     <h2><%= @movie.name %> </h2>
-		<%# <time><%= @movie.created_at.to_date.strftime("%d %B, %Y") %></time><br>  
-  	<%# <%= @movie.description %>
-  <%# </div>
+		 <time><%= @movie.created_at.to_date.strftime("%d %B, %Y") %></time><br>  
+  	 <%= @movie.description %>
+      <%# <% if movie.category.present? %> %>
+		   |
+       <%# <%= link_to movie.category.name, movie.category %> %>
+		  <h1>Category <%=  @movie.category.name %></h1>
+		   <%# <% end %>  %>
+      <%= render @movie.reviews %>
+
+   </div>
 </div>
   <%= link_to 'Назад', movies_path, class:"btn btn-outline-primary" %> 
-  <%# <%= link_to 'Змінити', edit_movie_path(@movie), class:"btn btn-outline-success" %> 
-  <%# <%= link_to 'Видалити', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %> 
- 
+   <%= link_to 'Змінити', edit_movie_path(@movie), class:"btn btn-outline-success" %> 
+   <%= link_to 'Видалити', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %> 
+  <%= link_to "Add Review", new_movie_review_path(@movie), class: "btn btn-secondary" %>
+</div>
 
 
-<article class="post">
-  <section class='post-head'>
-    <h2><%= @movie.name %> </h2>
-    <small>
-		<time><%= @movie.created_at.to_date.strftime("%d %B, %Y") %></time>
-    <%= link_to 'Назад', movies_path, class:"btn btn-outline-primary" %> 
-		<%= link_to 'Змінити', edit_movie_path(@movie), class:"btn btn-outline-success" %>
-		<%= link_to 'Видалити', @movie, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %>   
-	 </small>
-  </section>
-    
-  <section class='post-body'>
-  <br>
-  <%= image_tag @movie.image.url(:large), class: 'img-show' if @movie.image? %>
-	<%= @movie.description %>
-  </section>
-</article>
+
+
+<%# <span class=”glyphicon glyphicon-star”></span>або <span class=”glyphicon glyphicon-star-empty”> %>
+<%# <span class=”glyphicon glyphicon-star-empty”>
+<script>
+	$('.review-rating').raty({
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		},
+		path: '/assets/'
+	});
+</script> %>

@@ -20,9 +20,13 @@
   background-color: #1a1818 !important;
 }
 
-.card-backgroun {
+.container-background {
   width: 100%;
   height: 100vh;
   background-size: cover;
-  color: #e84393;
+  background-image: url(image_path("photo.jpg"));
+}
+
+.nan {
+  color: #e8dede;
 }

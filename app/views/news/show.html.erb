@@ -1,20 +1,16 @@
-<p id="notice"><%= notice %></p>
-<div class="card mb-3" style="max-width: 1000px;">
-  <div class="row g-0">
+<div class="row nan">
     <div class="col-md-4">
       <img <%= image_tag @news.image.url(:large), class: 'img-show' if @news.image? %>>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><%= @news.name %></h5>
-        <p class="card-text"><%= @news.description %></p>
-        <p class="card-text"><small class="text-muted">
-        <%= link_to 'Back', news_index_path, class:"btn btn-outline-primary" %> 
-        <%= link_to 'Edit', edit_news_path(@news), class:"btn btn-outline-success" %> 
-        <%= link_to 'Destroy', @news, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger" %></small></p>
-      </div>
-    </div>
-  </div>
-</div>
+   
+   <div class="col-md-8">
+     <h1><%= @news.name %> </h1>
+  	  <%= @news.description %>
+   </div>
+   </div>
 
-  
+<div>
+  <%= link_to 'Back', news_index_path, class:"btn btn-primary" %> 
+  <%= link_to 'Edit', edit_news_path(@news), class:"btn btn-success" %> 
+  <%= link_to 'Destroy', @news, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></small></p>
+</div>
