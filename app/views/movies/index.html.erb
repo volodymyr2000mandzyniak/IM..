@@ -1,14 +1,40 @@
-<div class="card text-white bg-secondary mb-3">
+<%# <div class="card text-white bg-secondary mb-3 ror">
   <div class="card-header">
     <h1>Фільми</h1>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <%= link_to 'new', new_movie_path, class:"btn btn-outline-warning me-md-2" %>
-</div>
-
+      <%= link_to 'new', new_movie_path, class:"btn btn-outline-warning me-md-2 " %>
+    <%# </div>
   </div>
+  
   <div class="card-body">
      <%= render @movies %>
+  <%# </div>
+</div>   %> 
+     
+
+
+    
+     <%# <div class="card-body">
+       <%= render 'shared/submenu'%> 
+     <%# </div> %> 
+  <%# <div class="col ror"> %>
+
+
+<div class="row ">
+  <div class="col ror">
+    <div class="card-footer">
+       <h1 class='nan' >Фільми</h1>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <%= link_to 'new', new_movie_path, class:"btn btn-outline-warning me-md-2 " %>
+      </div>
+    </div>
+     <%= render @movies %>
   </div>
+    <div class="col">
+      <%= render 'shared/submenu'%> 
+    </div>
 </div>
 
 
+
+   

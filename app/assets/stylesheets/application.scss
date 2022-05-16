@@ -18,15 +18,43 @@
 
 .navbar {
   background-color: #1a1818 !important;
+  height: 10vh;
 }
 
+.num {
+  background-color: #090202 !important;
+  width: 100%;
+}
 .container-background {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   background-image: url(image_path("photo.jpg"));
 }
 
 .nan {
   color: #e8dede;
+}
+
+.lin {
+  // color: #81867b;
+  width: 65rem;
+}
+
+.ror {
+  // width: 90rem;
+  background-color: #0c0b0b !important;
+}
+
+.roro {
+  width: 10rem;
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-color: #e8dede;
+
+  // background-image: url(image_path("photo.jpg"));
 }

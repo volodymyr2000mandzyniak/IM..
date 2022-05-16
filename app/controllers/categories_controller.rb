@@ -6,13 +6,16 @@ class CategoriesController < ApplicationController
   end
     
   def show
+    @movies = Movie.where(category_id: [@category.subtree_ids])
   end
     
   def new
     @category = Category.new
+    @categories = Category.all.order(:name)  
   end
     
   def edit
+    @categories = Category.where("id != #{@category.id}").order(:name)  
   end
         
   def create
@@ -45,7 +48,7 @@ class CategoriesController < ApplicationController
   end
         
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :parent_id)
   end
         
 end

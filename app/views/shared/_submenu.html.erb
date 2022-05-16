@@ -1,0 +1,31 @@
+<div class="card text-white bg-dark mb-3 ror">
+  <div class="card-header"><h2> Категорії </h2></div>
+    <div class="card-body">
+      <div class="submenu nan">
+        <ul class='nav nav-polls nav-stacked'>
+           <% Category.roots.each do |category| %>
+            <li class='nav-item' >
+                <%= link_to category.name, category, class: "nav-link #{'active' if current_page?(category_path(category)) || @movie.present? && @movie.category == category}" %>
+                <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %>
+            </li>
+                <% end %>
+         </ul>
+      </div>
+  </div> 
+ </div> 
+ 
+
+
+<%# 
+<div class="submenu nan">
+    <h2> Категорії </h2>
+    <ul class='nav nav-polls nav-stacked'>
+        <% Category.roots.each do |category| %>
+             <%# <li class='nav-item' >
+                <%# <%= link_to category.name, category, class: "nav-link #{'active' if current_page?(category_path(category)) || @movie.present? && @movie.category == category}" %>
+                <%# <%= render 'shared/submenu_categories', categories: category.root.descendants.arrange %>
+             <%# </li>
+         <% end %>
+     <%# </ul> %>
+<%# </div>   
+

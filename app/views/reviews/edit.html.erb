@@ -1,6 +1,6 @@
-<h1>Редагувати</h1>
- 
-<%= form_for ([@movie,@review]) do |f| %>
+ <div class='nan'>
+    <h1>Редагувати</h1>
+  <%= form_for ([@movie,@review]) do |f| %>
 
     <div class='form-group'>
 		<%= f.label :rating %>
@@ -17,7 +17,6 @@
 		<%= link_to 'Назад', :back, class: 'btn btn-outline-secondary'%>  
 
 	</div>
-
-<% end %>
-
+  <% end %>
+</div>
 

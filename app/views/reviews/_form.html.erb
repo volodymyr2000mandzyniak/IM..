@@ -2,7 +2,7 @@
     <%# <%= f.input :comment %>     
     <%# <%= f.button :submit %> 
 
-
+<div class='nan'>
 <%= form_for ([@movie, @movie.reviews.build]) do |f| %>
 <div id="rating-form">
     <div class='form-group'>
@@ -22,6 +22,7 @@
 	</div>
 
 <% end %>
+	</div>
 
 <%# <script>
 	$('#rating-form').raty({

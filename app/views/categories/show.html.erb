@@ -1,1 +1,10 @@
-<h1><%=  @category.name %></h1>  
+<%= render 'shared/breadcrumbs', category: @category %>
+<div class='nan'>
+<h1><%=  @category.name %></h1> 
+
+<section id='movies'>
+    <%= render @movies %>
+</section>
+
+
+</div>

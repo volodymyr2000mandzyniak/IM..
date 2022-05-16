@@ -3,5 +3,5 @@ class Movie < ApplicationRecord
 
     belongs_to :category
     has_many :reviews
-    belongs_to :user
+    # belongs_to :user
 end

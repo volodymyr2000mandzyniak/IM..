@@ -1,16 +1,18 @@
-<article class="post">
+<article class="post lin nan">
   <section class='post-head'>
-    <h2><%= link_to movie.name, movie_path(movie) %> </h2>
+     
+    <h1 ><%= link_to movie.name, movie_path(movie) %> </h1>
     <small>
-		<time><%= movie.created_at.to_date.strftime("%d %B, %Y") %></time>
+		<h4><time><%= movie.created_at.to_date.strftime("%d %B, %Y") %></time>
 		<% if movie.category.present? %>
 		|
-		  <%= link_to @movie.category.name, movie.category %>
-		<% end %>
+		  <%= link_to movie.category.name, movie.category %> 
+		 <% end %> 
 		|
 		<%= link_to 'Змінити', edit_movie_path(movie) %>
 		|
 		<%= link_to 'Видалити', movie, method: :delete, data: { confirm: 'Are you sure?' } %>   
+	 </h4>
 	 </small>
   </section>
     
